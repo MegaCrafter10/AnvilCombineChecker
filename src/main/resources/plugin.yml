@@ -1,0 +1,5 @@
+name: AnvilCombineChecker
+version: ${project.version}
+main: megacrafter10.combinechecker.AnvilCombineChecker
+authors: [MegaCrafter10]
+description: Only allow enchantments of the same type to be combined

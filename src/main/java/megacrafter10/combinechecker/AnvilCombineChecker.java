@@ -43,10 +43,10 @@ public final class AnvilCombineChecker extends JavaPlugin implements Listener {
                     EnchantmentStorageMeta enchMeta2 = (EnchantmentStorageMeta) item2.getItemMeta();
                     for (Enchantment ench : enchMeta1.getStoredEnchants().keySet()){
                         for (Enchantment ench2 : enchMeta2.getStoredEnchants().keySet()){
-                            if (!ench.getName().equals(ench2.getName())){
+                            if (!EnchantmentData.isCompatible(ench.getName(),ench2.getName())){
                                 event.setCancelled(true);
                                 event.getWhoClicked().sendMessage(ChatColor.RED +
-                                        "You cannot combine two enchantments of the same type");
+                                        "Enchantments are not compatible");
                                 return;
                             }
                         }
